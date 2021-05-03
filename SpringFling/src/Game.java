@@ -29,7 +29,7 @@ public class Game extends PApplet{
 		level1 = new Ledge[6];
 		level2 = new Ledge[6];
 		generateLevel(level1,0);
-		//starting ledge
+		//starting ledge 
 		level1[0] = new Ledge(190,490,0,0);
 		generateLevel(level2, 500);
 	}
