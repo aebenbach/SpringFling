@@ -14,6 +14,7 @@ public class Player {
 		this.x_speed = x_speed;
 		this.y_speed = y_speed;
 	}
+	//adjust player horizontal speed according to what buttons are pressed at the time
 	public void resolveX(boolean left_pressed,boolean right_pressed) {
 		if (right_pressed == left_pressed) {
 			this.x_speed = 0f;
@@ -25,6 +26,7 @@ public class Player {
 			this.x_speed = -4f;
 		}
 	}
+	//updates y and x position of player according to player speed and cam speed
 	public void update(float cam_speed) {
 		if (this.x_pos > 400) {
 			this.x_pos = 1;
@@ -35,6 +37,7 @@ public class Player {
 		this.x_pos += this.x_speed;
 		this.y_pos += (this.y_speed+cam_speed);
 	}
+	//displays player as red circle
 	public void display(Game game) {
 		game.fill(255,0,0);
 		game.ellipse(this.x_pos, this.y_pos-10.0f, 20.0f,20.0f);
