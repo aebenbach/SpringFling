@@ -24,3 +24,54 @@ public class Ledge {
 		game.rect(x_pos, y_pos, 25, 10);
 	}
 }
+
+// This is the public class ledge I made
+public class Ledge{
+  //Ledge Width and Height are constants
+  public color Color;
+  private final int ledgeWidth  = 70;
+  private final int ledgeHeight = 7;
+  public float xPos;
+  public float yPos;
+  public float xSpeed;
+  public final float pixelShift = 5; //TBD this will change!
+  
+  //Constructor initializes a black static ledge
+  public Ledge(){
+    this(color(0,0,0),50,525,0);
+  }
+  
+  //Constructor initializes starting ledges
+  public Ledge(color Color, float tempXPos, float tempYPos, float tempXSpeed){
+    this.Color = Color;
+    this.xPos = tempXPos;
+    this.yPos = tempYPos;
+    this.xSpeed = tempXSpeed;
+  }
+  
+  //Used to make the game harder
+  public void updateSpeed(){
+    this.xSpeed += 1;
+  }
+  
+  //Constructor initializes a static ledge
+  public void display(Game game){
+    game.fill(Color);
+    game.stroke(0);
+    game.rectMode(CENTER);
+    game.rect(this.xPos,this.yPos,ledgeWidth,ledgeHeight);
+  }
+  
+  //Moving ledge from left to right!
+  public void move(){
+     this.xPos += this.xSpeed; 
+      if (this.xPos >= width || this.xPos <= 0){
+        this.xSpeed = -this.xSpeed;
+      }
+  }
+  
+  //Method that moves screen up and creates more ledge once ledge is hit!
+  public void update(){
+    this.yPos += this.pixelShift;
+  }
+}
