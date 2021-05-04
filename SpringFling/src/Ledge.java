@@ -29,7 +29,7 @@ public class Ledge {
 public class Ledge{
   //Ledge Width and Height are constants
   public color Color;
-  private final int ledgeWidth  = 70;
+  private final int ledgeWidth  = 50;
   private final int ledgeHeight = 7;
   public float xPos;
   public float yPos;
@@ -38,7 +38,7 @@ public class Ledge{
   
   //Constructor initializes a white static ledge
   public Ledge(){
-    this(color(255,255,255),50,525,0);
+    this(color(255,255,255),50,425,0);
   }
   
   //Constructor initializes starting ledges
