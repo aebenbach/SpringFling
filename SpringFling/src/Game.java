@@ -140,4 +140,14 @@ public class Game extends PApplet{
 			ledge.display(game);
 		}
 	}
+	
+	//Detecting when the game is over
+	public static boolean isGameOver(Player player){
+		
+		if ((player.x_pos >= 0f && player.x_pos <= 400f) && player.y_pos >= 500f){
+			return true;
+		}
+		
+		return false;
+	}		
 }
