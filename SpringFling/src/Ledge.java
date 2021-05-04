@@ -36,9 +36,9 @@ public class Ledge{
   public float xSpeed;
   public final float pixelShift = 5; //TBD this will change!
   
-  //Constructor initializes a black static ledge
+  //Constructor initializes a white static ledge
   public Ledge(){
-    this(color(0,0,0),50,525,0);
+    this(color(255,255,255),50,525,0);
   }
   
   //Constructor initializes starting ledges
