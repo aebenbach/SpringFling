@@ -63,7 +63,7 @@ public class Ledge{
   }
   
   //Moving ledge from left to right!
-  public void move(){
+  public void move(){ //Check if Game game needs to be added here or nah!
      this.xPos += this.xSpeed; 
       if (this.xPos >= width || this.xPos <= 0){
         this.xSpeed = -this.xSpeed;
