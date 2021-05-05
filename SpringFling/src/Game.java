@@ -109,7 +109,7 @@ public class Game extends PApplet{
 		float interval = (500 / level.length);
 		for(int x=0; x < level.length ; x++) {
 			float x_pos = (float)(Math.random() * 376);
-			if (Math.random() <= .15) {
+			if (Math.random() <= .17) {
 				
 				level[x] = new Ledge(x_pos, 490f - (interval *x) - height, (float) (Math.random() * 3), 0f);
 	   	   	 }
