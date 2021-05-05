@@ -17,6 +17,7 @@ public class Ledge {
 	//updates ledges position to account for cam movement
 	public void update(float cam_speed) {
 		this.y_pos += (y_speed + cam_speed);
+		this.x_pos += x_speed;
 	}
 	//displays ledge. Important detail here, the game object has to be passed because drawing methods 
 	//in processing are non-static
@@ -24,7 +25,7 @@ public class Ledge {
 		game.rect(x_pos, y_pos, 25, 10);
 	}
 }
-
+/*
 // This is the public class ledge I made
 public class Ledge{
   //Ledge Width and Height are constants
@@ -75,3 +76,4 @@ public class Ledge{
     this.yPos += this.pixelShift;
   }
 }
+*/
