@@ -18,11 +18,14 @@ public class Ledge {
 	public void update(float cam_speed) {
 		this.y_pos += (y_speed + cam_speed);
 		this.x_pos += x_speed;
+		if (this.x_pos >= 400 || this.x_pos <= 0){
+	           this.x_speed = -this.x_speed;
+	         }
 	}
 	//displays ledge. Important detail here, the game object has to be passed because drawing methods 
 	//in processing are non-static
 	public void display(Game game) {
-		game.rect(x_pos, y_pos, 25, 10);
+	   	 game.printImage("ledge_img", x_pos, y_pos, 25, 10);
 	}
 }
 /*
