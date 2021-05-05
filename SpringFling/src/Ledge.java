@@ -71,7 +71,7 @@ public class Ledge{
       }
   }
   
-  //Method that moves screen up and creates more ledge once ledge is hit!
+  //Method that moves screen up
   public void update(){
     this.yPos += this.pixelShift;
   }
