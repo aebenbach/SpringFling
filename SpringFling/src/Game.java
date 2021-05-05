@@ -158,7 +158,7 @@ public class Game extends PApplet{
 	}		
 }
 
-//TEST THIS PART
+//UPDATED VERSION
 import processing.core.*;
 
 public class Game extends PApplet{
@@ -186,6 +186,7 @@ public class Game extends PApplet{
     Ledge[] level2;
     PImage ledge_img;
     PImage character_img;
+    PImage character_r_img;
     PImage background_img;
     PImage instruction_img;
     PImage title_img;
@@ -198,6 +199,7 @@ public class Game extends PApplet{
    	 //get all the art assets from the folder
    	 ledge_img = loadImage("Tile for Intro to CS Game.png");
    	 character_img = loadImage("Character for Intro to CS .png");
+   	 character_r_img = loadImage("Character for Intro to CS reversed.png");
    	 background_img = loadImage("Background for Intro to CS game.png");
    	 instruction_img = loadImage("Instruction Page.png");
    	 title_img = loadImage("Title Screen for CS Game.png");
@@ -264,7 +266,7 @@ public class Game extends PApplet{
    		 i_pressed = false;
    		 held_down = false;
    	 }
-   	 if (key == 32) {
+   	 if (key == 'q') {
    		 q_pressed = false;
    	 }
     }
@@ -298,7 +300,7 @@ public class Game extends PApplet{
    		 }
    	 }
 
-   	 if (game_started) {   	 
+   	 if (game_started) {
    		 //function resolves the x speed of the player at this particular frame
    		 player.resolveX(left_pressed,right_pressed);
    		 
@@ -326,6 +328,15 @@ public class Game extends PApplet{
    		 displayLevel(level1,level2,this);
    		 player.update(cam_speed);
    		 player.display(this);
+   		 
+   		 //Displaying score
+   		 PFont rainy_hearts;
+   		 rainy_hearts = createFont("rainyhearts.ttf", 26);
+	   	 textFont(rainy_hearts);
+	   	 textAlign(RIGHT);
+   		 text((int)score, 390, 20);
+   		 fill(255,255,255);
+   		 
    		 if (player.playerStatus()) {
    			 game_started = false;
    			 game_over = true;
@@ -334,6 +345,11 @@ public class Game extends PApplet{
    	 
    	 if (game_over) {
    		 background(end_img);
+   		 textAlign(CENTER);
+   		 textSize(40);
+   		 text((int)score, 300, 260);
+  		 fill(255,255,255);
+  		 
    		 if (space_pressed) {
    			 game_over = false;
    			 setup();
@@ -368,8 +384,8 @@ public class Game extends PApplet{
    	 for(int x=0; x < level.length ; x++) {
    		 float x_pos = (float)(Math.random() * 376);
    		 
-   		 if (Math.random() <= 1/6) {
-   	   	     level[x] = new Ledge(x_pos, 490f - (interval *x) - height, (int)(Math.random() * 3), 0f);
+   		 if (Math.random() <= 0.17) {
+   	   	     level[x] = new Ledge(x_pos, 490f - (interval *x) - height, (float)(Math.random() * 3), 0f);
    	   	 }
    	   	 else {
    	   	     level[x] = new Ledge(x_pos, 490f - (interval *x) - height, 0f, 0f);
@@ -413,15 +429,9 @@ public class Game extends PApplet{
    	 else if (img_name.equals("character_img")){
    		 this.image(character_img, x_pos, y_pos, width, height);
    	 }
+   	 else if (img_name.equals("character_r_img")){
+   		 this.image(character_r_img, x_pos, y_pos, width, height);
+   	 }
     }
-    
-	//Detecting when the game is over
-	public static boolean isGameOver(Player player){
-		
-		if ((player.x_pos >= 0f && player.x_pos <= 400f) && player.y_pos >= 500f){
-			return true;
-		}
-		
-		return false;
-	}		
+    		
 }
