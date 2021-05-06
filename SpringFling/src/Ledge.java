@@ -22,7 +22,7 @@ public class Ledge {
 	//displays ledge. Important detail here, the game object has to be passed because drawing methods 
 	//in processing are non-static
 	public void display(Game game) {
-		game.rect(x_pos, y_pos, 25, 10);
+		game.printImage("ledge_img", x_pos, y_pos, 25, 10);
 	}
 }
 /*

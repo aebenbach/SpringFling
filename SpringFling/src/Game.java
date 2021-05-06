@@ -1,6 +1,6 @@
-import processing.core.*; 
+/*import processing.core.*; 
 
-public class Game extends PApplet{
+public class Game extends PApplet {
 
 	public static void main(String[] args) {
 		PApplet.main("Game");
@@ -157,7 +157,7 @@ public class Game extends PApplet{
 		return false;
 	}		
 }
-
+*/
 //TEST THIS PART
 import processing.core.*;
 
@@ -368,7 +368,7 @@ public class Game extends PApplet{
    	 for(int x=0; x < level.length ; x++) {
    		 float x_pos = (float)(Math.random() * 376);
    		 
-   		 if (Math.random() <= 1/6) {
+   		 if (Math.random() <= .17) {
    	   	     level[x] = new Ledge(x_pos, 490f - (interval *x) - height, (int)(Math.random() * 3), 0f);
    	   	 }
    	   	 else {
