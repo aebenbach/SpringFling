@@ -208,14 +208,14 @@ public class Game extends PApplet{
     //iterates through all ledges to check if player has landed on any of them
     public static boolean isLanded(Player player, Ledge[] level1, Ledge[] level2) {
    	 for(Ledge ledge : level1) {
-   		 if (player.x_pos >= ledge.x_pos-10f && player.x_pos <= ledge.x_pos+35f
-   				 && player.y_pos >= ledge.y_pos && player.y_pos <= ledge.y_pos + 10 && player.y_speed>0) {
+   		 if (player.x_pos >= ledge.x_pos-15f && player.x_pos <= ledge.x_pos+25f
+   				 && player.y_pos >= ledge.y_pos-15f && player.y_pos <= ledge.y_pos - 5f && player.y_speed>0) {
    			 return true;
    		 }
    	 }
    	 for(Ledge ledge : level2) {
-   		 if (player.x_pos >= ledge.x_pos-10f && player.x_pos <= ledge.x_pos+35f
-   				 && player.y_pos >= ledge.y_pos && player.y_pos <= ledge.y_pos + 10 && player.y_speed>0) {
+   		 if (player.x_pos >= ledge.x_pos-15f && player.x_pos <= ledge.x_pos+25f
+   				 && player.y_pos >= ledge.y_pos-15f && player.y_pos <= ledge.y_pos - 5f && player.y_speed>0) {
    			 return true;
    		 }
    	 }

@@ -55,12 +55,15 @@ public class Player {
     
   //displays player as the bunny
     public void display(Game game) {
+    	
    	 if (direction_l) {
-   		 game.printImage("character_r_img",this.x_pos, this.y_pos-10.0f, 20.0f,20.0f);
+   		 game.printImage("character_r_img",this.x_pos, this.y_pos, 20.0f,20.0f);
    	 }
    	 else {
-   		 game.printImage("character_img",this.x_pos, this.y_pos-10.0f, 20.0f,20.0f);
+   		 game.printImage("character_img",this.x_pos, this.y_pos, 20.0f,20.0f);
    	 }
+   	 //game.fill(255,0,0);
+   	 //game.ellipse(this.x_pos, this.y_pos, 3, 3);
     }
 }
 
