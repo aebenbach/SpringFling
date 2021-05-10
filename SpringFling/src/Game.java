@@ -5,6 +5,8 @@
 //UPDATED VERSION
 
 import processing.core.*;
+import ddf.minim.*;
+
 
 public class Game extends PApplet{
 
@@ -36,6 +38,9 @@ public class Game extends PApplet{
     PImage instruction_img;
     PImage title_img;
     PImage end_img;
+    Minim minim;
+    AudioPlayer audio_player;
+
     
     public void settings() {  
    	 size(400,500);
@@ -59,6 +64,11 @@ public class Game extends PApplet{
    	 cam_speed = 0;
    	 score = 0;
    	 player = new Player();
+	    
+	 //Setting up the background music 
+   	 minim = new Minim(this);
+   	 audio_player = minim.loadFile("in motion.mp3");
+   	 audio_player.loop();
    	 
    	 //infinite, random generation works by creating two chunks at a time called levels
    	 level1 = new Ledge[6];
@@ -200,6 +210,7 @@ public class Game extends PApplet{
    			 setup();
    		 }
    		 if(q_pressed) {
+			 audio_player.pause();
    			 exit();
    		 }   	 
    	 }
