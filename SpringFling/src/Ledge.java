@@ -18,7 +18,7 @@ public class Ledge {
 	public void update(float cam_speed) {
 		this.y_pos += (y_speed + cam_speed);
 		this.x_pos += x_speed;
-		if (this.x_pos >= 400 || this.x_pos <= 0){
+		if (this.x_pos >= 375 || this.x_pos <= 0){
 	           this.x_speed = -this.x_speed;
 	         }
 	}
