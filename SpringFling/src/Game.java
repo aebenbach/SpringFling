@@ -1,8 +1,13 @@
 
-//TEST THIS PART
-
-
-//UPDATED VERSION
+/*Spring Fling 
+ by Andrew Ebenbach, Manjiri Bhandarwar, Toni-Ann Royes, & Andy Xiong
+ 5/10/21 
+ The character jumps up through a series of ledges. 
+ The player can use buttons to control their movement in the left and right directions. 
+ The character automatically jumps when they land on a ledge. 
+ The game generates more ledges as the player goes higher and higher, but deletes ledges which have gone below the player’s screen. 
+ The score of the player is how high they go. The game ends when the player falls below the screen.
+ */
 
 import processing.core.*;
 import ddf.minim.*;

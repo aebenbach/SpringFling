@@ -1,4 +1,4 @@
-//FINAL
+
 public class Ledge {
 	public float x_speed;
 	public float y_speed;
